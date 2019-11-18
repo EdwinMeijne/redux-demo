@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { GebruikerState } from './state/gebruiker.state';
 import { loadGebruikersStart } from './state/gebruiker.actions';
-import { AppState, selectGebruikers } from './state/gebruiker.selectors';
+import { AppState, selectGebruikersData } from './state/gebruiker.selectors';
 
 @Component({
   selector: 'app-gebruikers',
@@ -10,7 +9,7 @@ import { AppState, selectGebruikers } from './state/gebruiker.selectors';
   styleUrls: ['./gebruikers.component.css']
 })
 export class GebruikersComponent implements OnInit {
-  gebruikers$ = this.store.pipe(select(selectGebruikers));
+  gebruikersData$ = this.store.pipe(select(selectGebruikersData));
 
   constructor(private readonly store: Store<AppState>) { }
 

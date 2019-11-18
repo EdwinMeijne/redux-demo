@@ -7,7 +7,10 @@ export interface AppState {
 
 const selectFeature = createFeatureSelector<AppState, GebruikerState>('gebruikers');
 
-export const selectGebruikers = createSelector(
+export const selectGebruikersData = createSelector(
   selectFeature,
-    state => state.gebruikers,
+    state => ({
+      gebruikers: state.gebruikers,
+      loading: state.loading,
+    }),
 );

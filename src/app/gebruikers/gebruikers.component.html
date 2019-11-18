@@ -1,7 +1,11 @@
-<ng-container *ngIf="gebruikers$ | async as gebruikers">
-    <ul>
-      <li *ngFor="let gebruiker of gebruikers">
+<ng-container *ngIf="gebruikersData$ | async as gebruikersData else loading">
+    <ul *ngIf="!gebruikersData.loading else loading">
+      <li *ngFor="let gebruiker of gebruikersData.gebruikers">
         {{gebruiker.id}} - {{gebruiker.name}} ({{gebruiker.email}})
       </li>
     </ul>
 </ng-container>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
