@@ -1,0 +1,7 @@
+<ng-container *ngIf="gebruikers$ | async as gebruikers">
+    <ul>
+      <li *ngFor="let gebruiker of gebruikers">
+        {{gebruiker.id}} - {{gebruiker.name}} ({{gebruiker.email}})
+      </li>
+    </ul>
+</ng-container>
