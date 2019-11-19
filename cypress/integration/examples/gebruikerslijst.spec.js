@@ -24,7 +24,7 @@ describe('Gebruikerspagina', () => {
           "email": "Nathan@yesenia.net",
         },
       ],
-      delay: 1000,
+      delay: 10, // Give cypress a little bit of time to find the loading indicator
     }).as('gebruikersList');
     cy.visit('http://localhost:4200/gebruikers');
   });
