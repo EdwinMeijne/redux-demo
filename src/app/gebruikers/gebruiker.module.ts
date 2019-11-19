@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { gebruikersReducer } from './state/gebruiker.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { GebruikerEffects } from './state/gebruiker.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,9 +14,13 @@ import { GebruikerEffects } from './state/gebruiker.effects';
     GebruikersComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     StoreModule.forFeature('gebruikers', gebruikersReducer),
     EffectsModule.forFeature([GebruikerEffects]),
+  ],
+  exports: [
+    GebruikersComponent
   ]
 })
 export class GebruikerModule { }

@@ -56,7 +56,10 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "i18nFile": "src/locale/messages.nl.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "nl"
             }
           }
         },
@@ -64,6 +67,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "redux-demo:build"
+
           },
           "configurations": {
             "production": {

@@ -8,7 +8,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class GebruikerEffects {
   constructor(
     private actions$: Actions,
-    private gebruikerService: GebruikerService
+    private gebruikerService: GebruikerService,
   ) {}
 
   loadGebruikers$ = createEffect(() => this.actions$.pipe(
